@@ -1,7 +1,7 @@
 set -euo pipefail
 
 # get packages
-sudo apt-get install -y tmux neovim gh
+sudo apt-get install -y tmux neovim gh silversearcher-ag
 
 # make directories
 mkdir -p ~/workspace ~/adhoc ~/.config/nvim

@@ -43,9 +43,11 @@ alias tmr="tmux source-file ~/.tmux.conf"
 alias gas="git add --all"
 alias can="git commit --amend --no-edit"
 alias gl="git log --oneline --graph --all --decorate"
+alias gb="git branch --show-current"
+alias gr='git remote show origin | grep "$(gb) merges with remote" | awk '"'"'{print $NF}'"'"
 alias uncan="git reset HEAD^1"
 alias trashcan="git reset --hard HEAD^1"
-alias status="git log --oneline HEAD..origin/mainline && git status"
+alias status='git log --oneline HEAD..origin/$(gr) && git status'
 alias gascan="gas && can"
 
 sing() {
