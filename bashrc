@@ -1,8 +1,10 @@
 # bash settings
-# TODO fix weird output when moving up twice
 export HISTSIZE=1048576
 export HISTFILESIZE=1048576
-export PS1='\e[34m$(dirs): \e[0m'
+
+# square brackets around escape codes tell bash they're non-printable, so it knows they don't take up space
+# otherwise when you scroll through history, the first few characters of the command will not redraw
+export PS1='\[\e[34m\]$(dirs): \[\e[0m\]'
 
 # TODO apt update, apt upgrade, with prompt and cleanup
 # TODO auto-update configs too
