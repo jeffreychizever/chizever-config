@@ -5,6 +5,7 @@ export HISTFILESIZE=1048576
 export PS1='\e[34m$(dirs): \e[0m'
 
 # TODO apt update, apt upgrade, with prompt and cleanup
+# TODO auto-update configs too
 
 # TODO todo-lister
 # TODO ag
@@ -14,7 +15,7 @@ alias cdws="cd ~/workspace"
 alias cdah="cd ~/adhoc"
 
 # config interactions
-alias cdc="cd ~/workplace/chizever-config"
+alias cdc="cd ~/workspace/chizever-config"
 rcr() {
   . ~/.bshrc
   tmux source-file ~/.tmux.conf
