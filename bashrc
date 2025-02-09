@@ -7,8 +7,11 @@ export PS1='\e[34m$(dirs): \e[0m'
 # TODO apt update, apt upgrade, with prompt and cleanup
 # TODO auto-update configs too
 
-# TODO todo-lister
-# TODO ag
+
+# various
+alias v=nvim
+alias notes="v ~/notes"
+alias todo="(cd ~ && ag TODO)"
 
 # directories
 alias cdws="cd ~/workspace"
@@ -20,10 +23,6 @@ rcr() {
   . ~/.bshrc
   tmux source-file ~/.tmux.conf
 }
-
-# editor
-alias v=nvim
-alias notes="v ~/notes"
 
 # simple webserver in a directory
 serve() {
