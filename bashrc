@@ -14,6 +14,7 @@ export PS1='\[\e[34m\]$(dirs): \[\e[0m\]'
 alias v=nvim
 alias notes="v ~/notes"
 alias todo="(cd ~ && ag TODO)"
+alias web="xdg-open https://google.com"
 
 # directories
 alias cdws="cd ~/workspace"
@@ -22,23 +23,21 @@ alias cdah="cd ~/adhoc"
 # config interactions
 alias cdc="cd ~/workspace/chizever-config"
 rcr() {
-  . ~/.bshrc
+  . ~/.bashrc
   tmux source-file ~/.tmux.conf
 }
 
 # simple webserver in a directory
 serve() {
-  pass
-  # TODO
+  python3 -m http.server 8080 &
+  xdg-open http://0.0.0.0:8080/
+  fg
 }
 
 #tmux 
 alias tm="tmux new -A -s main"
 alias tmr="tmux source-file ~/.tmux.conf"
-# TODO tmux default window
 
-# TODO easy systemd?
-# TODO easy cached menus?
 
 # git aliases
 alias gas="git add --all"

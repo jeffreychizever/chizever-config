@@ -7,7 +7,6 @@ sudo apt-get install -y tmux neovim gh silversearcher-ag
 # make directories
 mkdir -p ~/workspace ~/adhoc ~/.config/nvim
 
-# TODO abstract feature selector
 if ! (test -f ~/.config/features && grep -q "github" ~/.config/features)
 then
     echo "Log in to GitHub?"
@@ -31,7 +30,6 @@ then
     gh auth status || (gh auth login && gh auth status)
 fi
 
-# TODO prompt for which of these to install
 grep -q "chizever-config" ~/.tmux.conf || echo "source ~/workspace/chizever-config/tmux.conf" >> ~/.tmux.conf
 grep -q "chizever-config" ~/.bashrc || echo "source ~/workspace/chizever-config/bashrc" >> ~/.bashrc
 grep -q "chizever-config" ~/.vimrc || echo "source ~/workspace/chizever-config/vimrc" >> ~/.vimrc
