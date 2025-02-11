@@ -15,6 +15,20 @@ alias v=nvim
 alias notes="v ~/notes"
 alias todo="(cd ~ && ag TODO)"
 alias ct="ctags -R --exclude=.git --exclude=log --exclude=html --exclude=build *"
+alias subdirs="find . -mindepth 1 -maxdepth 1 -type d"
+rc() {
+    ( 
+        set -euo pipefail
+        for dir in $(subdirs)
+        do
+            cd $dir
+            pwd
+            $@
+            cd ..
+        done
+    )
+}
+
 web() {
     xdg-open ${1:-https://www.google.com}
 }
