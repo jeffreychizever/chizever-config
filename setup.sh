@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # get packages
-sudo apt-get install -y tmux neovim gh silversearcher-ag
+sudo apt-get install -y tmux neovim gh silversearcher-ag universal-ctags
 
 # make directories
 mkdir -p ~/workspace ~/adhoc ~/.config/nvim
@@ -29,6 +29,10 @@ if grep -q "github true" ~/.config/features
 then
     gh auth status || (gh auth login && gh auth status)
 fi
+
+git config --global core.excludesfile ~/.gitignore
+touch ~/.gitignore
+grep "tags" ~/.gitignore || echo "tags" >> ~/.gitignore
 
 grep -q "chizever-config" ~/.tmux.conf || echo "source ~/workspace/chizever-config/tmux.conf" >> ~/.tmux.conf
 grep -q "chizever-config" ~/.bashrc || echo "source ~/workspace/chizever-config/bashrc" >> ~/.bashrc

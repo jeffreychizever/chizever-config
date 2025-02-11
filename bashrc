@@ -14,7 +14,10 @@ export PS1='\[\e[34m\]$(dirs): \[\e[0m\]'
 alias v=nvim
 alias notes="v ~/notes"
 alias todo="(cd ~ && ag TODO)"
-alias web="xdg-open https://google.com"
+alias ct="ctags -R --exclude=.git --exclude=log --exclude=html --exclude=build *"
+web() {
+    xdg-open ${1:-https://www.google.com}
+}
 
 # directories
 alias cdws="cd ~/workspace"
@@ -30,7 +33,7 @@ rcr() {
 # simple webserver in a directory
 serve() {
   python3 -m http.server 8080 &
-  xdg-open http://0.0.0.0:8080/
+  web http://0.0.0.0:8080/
   fg
 }
 
@@ -62,3 +65,11 @@ But you'll look sweet upon the seat
 Of a bicycle built for two!
 EOF
 }
+
+
+if [[ $(hostname) = "penguin" ]]
+then
+    alias sheets="web https://docs.google.com/spreadsheets/u/0/"
+    alias docs="web https://docs.google.com/"
+    alias notes="web https://keep.google.com/#NOTE/12tsHEzsQPpI6o8e2FhjWWlcoi4bRq1hI_d-Vwg0cw6GZXOCK3sW1h76kwvgkW_90Kn4U"
+fi
