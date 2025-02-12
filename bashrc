@@ -11,6 +11,7 @@ export PS1='\[\e[34m\]$? $(ts) $(gb) $(dirs): \[\e[0m\]'
 
 
 # various
+export PATH="/opt/nvim-linux-x86_64/bin:$PATH"
 alias v=nvim
 alias notes="v ~/notes"
 alias todo="(cd ~ && ag TODO)"

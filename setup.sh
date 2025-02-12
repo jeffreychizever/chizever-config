@@ -2,10 +2,11 @@
 set -euo pipefail
 
 # get packages
-sudo apt-get install -y tmux neovim gh silversearcher-ag universal-ctags
+sudo apt-get install -y tmux neovim gh silversearcher-ag universal-ctags tree gcc npm
+sudo npm install -g tree-sitter-cli
 
 # make directories
-mkdir -p ~/workspace ~/adhoc ~/.config/nvim
+mkdir -p ~/workspace ~/adhoc ~/.config
 
 if ! (test -f ~/.config/features && grep -q "github" ~/.config/features)
 then
@@ -37,6 +38,7 @@ grep "tags" ~/.gitignore || echo "tags" >> ~/.gitignore
 grep -q "chizever-config" ~/.tmux.conf || echo "source ~/workspace/chizever-config/tmux.conf" >> ~/.tmux.conf
 grep -q "chizever-config" ~/.bashrc || echo "source ~/workspace/chizever-config/bashrc" >> ~/.bashrc
 grep -q "chizever-config" ~/.vimrc || echo "source ~/workspace/chizever-config/vimrc" >> ~/.vimrc
-grep -q "chizever-config" ~/.config/nvim/init.vim || echo "source ~/workspace/chizever-config/init.vim" >> ~/.config/nvim/init.vim
+ln -sf ~/workspace/chizever-config/nvim ~/.config/nvim
+
 
 echo -e "Setup successful! Ride fast and take chances \xF0\x9F\x8F\x8E"
