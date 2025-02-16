@@ -22,7 +22,10 @@ return {
 
         local lspc = require("lspconfig")
         lspc.jdtls.setup({})
-        lspc.lua_ls.setup({})
+        lspc.lua_ls.setup({
+            -- stop the lua lsp complaining about calling `vim`
+            settings = { Lua = { diagnostics = { globals = { "vim" },},},},
+        })
         lspc.pyright.setup({})
         lspc.solargraph.setup({})
         lspc.clangd.setup({})
@@ -31,7 +34,8 @@ return {
 
 
         -- ~~~ Linters ~~~
-        require('lint').linters_by_ft = {
+        local lint = require('lint')
+        lint.linters_by_ft = {
             java = {'checkstyle'},
             lua = {'luacheck'},
             python = {'flake8'},
@@ -46,11 +50,11 @@ return {
             bash = {'shellcheck'},
         }
 
-        vim.api.nvim_create_autocmd({ "InsertLeave", "BufWritePost" }, {
+        vim.api.nvim_create_autocmd({ "BufReadPost", "InsertLeave", "BufWritePost" }, {
         callback = function()
-                local lint_status, lint = pcall(require, "lint")
+                local lint_status, linter = pcall(require, "lint")
                 if lint_status then
-                    lint.try_lint()
+                    linter.try_lint()
                 end
             end,
         })
