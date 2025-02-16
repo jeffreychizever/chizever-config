@@ -9,7 +9,7 @@ return {
 
         local lsp = require("mason-lspconfig")
         lsp.setup({
-            ensure_installed = { "lua_ls", "pyright", "solargraph" },
+            ensure_installed = { "lua_ls", "pyright", "solargraph", "clangd", "ts_ls" },
         })
 
         local java = require('java')
