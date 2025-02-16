@@ -2,7 +2,7 @@
 set -euo pipefail
 
 # get packages
-sudo apt-get install -y tmux neovim gh silversearcher-ag universal-ctags tree gcc npm default-jre java-common
+sudo apt-get install -y tmux neovim gh silversearcher-ag universal-ctags tree gcc npm default-jre java-common ruby python3 ruby-dev
 sudo npm install -g tree-sitter-cli
 
 java -XshowSettings:properties -version 2>&1 > /dev/null | grep 'java.home' | awk '{print $NF}' > ~/.java_home
