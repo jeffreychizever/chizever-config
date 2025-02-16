@@ -38,9 +38,11 @@ git config --global core.excludesfile ~/.gitignore
 touch ~/.gitignore
 grep "tags" ~/.gitignore || echo "tags" >> ~/.gitignore
 
+test -e ~/.tmux.conf || touch ~/.tmux.conf
 grep -q "chizever-config" ~/.tmux.conf || echo "source ~/workspace/chizever-config/tmux.conf" >> ~/.tmux.conf
+test -e ~/.bashrc || touch ~/.bashrc
 grep -q "chizever-config" ~/.bashrc || echo "source ~/workspace/chizever-config/bashrc" >> ~/.bashrc
-touch ~/.vimrc
+test -e ~/.vimrc || touch ~/.vimrc
 ln -sf ~/workspace/chizever-config/nvim ~/.config
 
 echo -e "Setup successful! Ride fast and take chances \xF0\x9F\x8F\x8E"
