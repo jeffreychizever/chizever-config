@@ -14,7 +14,7 @@ return {
 
         local lsp = require("mason-lspconfig")
         lsp.setup({
-            ensure_installed = { "lua_ls", "pyright", "solargraph", "clangd", "ts_ls" },
+            ensure_installed = { "lua_ls", "pyright", "solargraph", "clangd", "ts_ls", "bashls" },
         })
 
         local java = require('java')
@@ -23,19 +23,27 @@ return {
         local lspc = require("lspconfig")
         lspc.jdtls.setup({})
         lspc.lua_ls.setup({})
-        do end
+        lspc.pyright.setup({})
+        lspc.solargraph.setup({})
+        lspc.clangd.setup({})
+        lspc.ts_ls.setup({})
+        lspc.bashls.setup({})
 
 
         -- ~~~ Linters ~~~
         require('lint').linters_by_ft = {
-            python = {'flake8'},
-            ruby = {'rubocop'},
             java = {'checkstyle'},
             lua = {'luacheck'},
+            python = {'flake8'},
+            ruby = {'rubocop'},
+            c_cpp = {'cpplint'},
+            cpp = {'cpplint'},
+            c = {'cpplint'},
             typescript = {'eslint_d'},
             javascript = {'eslint_d'},
             typescriptreact = {'eslint_d'},
             javascriptreact = {'eslint_d'},
+            bash = {'shellcheck'},
         }
 
         vim.api.nvim_create_autocmd({ "InsertLeave", "BufWritePost" }, {
@@ -48,7 +56,6 @@ return {
         })
 
         require ('mason-nvim-lint').setup({
-            ensure_installed = { "flake8", "rubocop", "eslint_d", "checkstyle", "luacheck" },
             ignore_install = { "ruby", "inko", "janet", "clj-kondo" }
         })
     end
