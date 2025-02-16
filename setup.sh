@@ -2,6 +2,7 @@
 set -euo pipefail
 
 # get packages
+# TODO support things other than Debian
 sudo apt-get install -y tmux neovim gh silversearcher-ag universal-ctags tree gcc npm default-jre java-common ruby python3 ruby-dev nodejs python3.11-venv luarocks
 sudo npm install -g tree-sitter-cli
 

@@ -1,6 +1,6 @@
 syntax on
 set list
-set listchars+=leadmultispace:•\ \ \ 
+set listchars+=leadmultispace:\▏\ \ \ 
 set listchars+=trail:•,extends:⟩,precedes:⟨
 set showmatch
 set ruler
