@@ -6,10 +6,6 @@ export HISTFILESIZE=1048576
 # otherwise when you scroll through history, the first few characters of the command will not redraw
 export PS1='\[\e[34m\]$? $(ts) $(gb) $(dirs): \[\e[0m\]'
 
-# TODO apt update, apt upgrade, with prompt and cleanup
-# TODO auto-update configs too
-
-
 # various
 export PATH="/opt/nvim-linux-x86_64/bin:$PATH"
 export JAVA_HOME=$(cat ~/.java_home)
