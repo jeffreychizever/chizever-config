@@ -13,9 +13,16 @@ return {
         })
 
         local lsp = require("mason-lspconfig")
-        lsp.setup({
-            ensure_installed = { "lua_ls", "pyright", "solargraph", "clangd", "ts_ls", "bashls" },
-        })
+        lsp.setup({ ensure_installed = {
+            "lua_ls",
+            "pyright",
+            "solargraph",
+            "clangd",
+            "ts_ls",
+            "bashls",
+            "harper_ls",
+            "marksman",
+        }})
 
         local java = require('java')
         java.setup()
@@ -23,7 +30,7 @@ return {
         local lspc = require("lspconfig")
         lspc.jdtls.setup({})
         lspc.lua_ls.setup({
-            -- stop the lua lsp complaining about calling `vim`
+            -- Stop the lua lsp complaining about calling `vim`
             settings = { Lua = { diagnostics = { globals = { "vim" },},},},
         })
         lspc.pyright.setup({})
@@ -31,7 +38,8 @@ return {
         lspc.clangd.setup({})
         lspc.ts_ls.setup({})
         lspc.bashls.setup({})
-
+        lspc.harper_ls.setup({})
+        lspc.marksman.setup({})
 
         -- ~~~ Linters ~~~
         local lint = require('lint')

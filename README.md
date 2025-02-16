@@ -1,8 +1,8 @@
 # chizever-config
-Dotfiles and setup scripts for my terminal experience. Settings for bash, tmux, neovim, mutt, and whatever else.
+Dotfiles and setup scripts for my terminal experience. Settings for bash, tmux, Neovim, and whatever else.
 
 
-# intallation
+# installation
 from anywhere:
 ```bash
 curl -o loader.sh https://raw.githubusercontent.com/jeffreychizever/chizever-config/refs/heads/main/loader.sh \
