@@ -10,3 +10,13 @@ curl -o loader.sh https://raw.githubusercontent.com/jeffreychizever/chizever-con
     && ./loader.sh
 ```
 
+# key bindings
+just `ag keymap`
+Some default values are explicitly remarked here, for reference:
+```
+keymap TAB: window prefix
+keymap \: leader
+keymap |: local leader
+keymap K: hover(), shows method signature
+```
+
