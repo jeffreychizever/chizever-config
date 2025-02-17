@@ -58,6 +58,13 @@ return {
             bash = {'shellcheck'},
         }
 
+        local builtin = require('telescope.builtin')
+        vim.keymap.set('n', '<leader>vi', builtin.lsp_implementations, { desc = 'View implementation(s)' })
+        vim.keymap.set('n', '<leader>vd', builtin.lsp_definitions, { desc = 'View definition(s)' })
+        vim.keymap.set('n', '<leader>vt', builtin.lsp_type_definitions, { desc = 'View type definition(s)' })
+        vim.keymap.set('n', '<leader>vu', builtin.lsp_incoming_calls, { desc = 'View usage(s)' })
+        vim.keymap.set('n', '<leader>ve', builtin.diagnostics, { desc = 'View error(s)' })
+
         vim.api.nvim_create_autocmd({ "BufReadPost", "InsertLeave", "BufWritePost" }, {
         callback = function()
                 local lint_status, linter = pcall(require, "lint")
