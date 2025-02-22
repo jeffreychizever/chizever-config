@@ -22,6 +22,7 @@ return {
             "bashls",
             "harper_ls",
             "marksman",
+            "jsonls"
         }})
 
         local java = require('java')

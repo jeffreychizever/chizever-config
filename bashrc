@@ -6,6 +6,8 @@ export HISTFILESIZE=1048576
 # otherwise when you scroll through history, the first few characters of the command will not redraw
 export PS1='\[\e[34m\]$? $(ts) $(gb) $(dirs): \[\e[0m\]'
 
+eval "$(~/.local/bin/mise activate bash)"
+
 # various
 export PATH="/opt/nvim-linux-x86_64/bin:$PATH"
 export JAVA_HOME=$(cat ~/.java_home)
@@ -23,14 +25,21 @@ rc() {
         do
             cd $dir
             pwd
-            $@
+            "$@"
             cd ..
         done
     )
 }
+alias ding='echo -e "\a"'
+and() {
+    test $? -eq 0 && "$@"
+}
+or() {
+    test $? -eq 0 || "$@"
+}
 
 web() {
-    xdg-open ${1:-https://www.google.com}
+    xdg-open "${1:-https://www.google.com}"
 }
 
 # directories

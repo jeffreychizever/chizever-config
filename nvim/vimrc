@@ -7,6 +7,12 @@ set ruler
 set number
 set scrolloff=8
 
+set ignorecase
+set smartcase
+set incsearch
+set undodir=~/.vim_undo
+set undofile
+
 set smarttab
 set expandtab
 set shiftwidth=4

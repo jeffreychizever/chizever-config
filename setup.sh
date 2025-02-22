@@ -3,13 +3,19 @@ set -euo pipefail
 
 # get packages
 # TODO support things other than Debian
-sudo apt-get install -y tmux neovim gh silversearcher-ag universal-ctags tree gcc npm default-jre java-common ruby python3 ruby-dev nodejs python3.11-venv luarocks
+curl https://mise.run | sh
+eval "$(~/.local/bin/mise activate bash)"
+
+sudo apt-get install -y tmux neovim gh silversearcher-ag universal-ctags tree gcc npm default-jre java-common ruby python3 ruby-dev nodejs python3.11-venv luarocks fd-find ripgrep
+ln -s "$(which fdfind)" ~/.local/bin/fd
+
 sudo npm install -g tree-sitter-cli
 
 java -XshowSettings:properties -version 2>&1 > /dev/null | grep 'java.home' | awk '{print $NF}' > ~/.java_home
 
 # make directories
 mkdir -p ~/workspace ~/adhoc ~/.config
+mkdir -p ~/.vim_undo
 
 if ! (test -f ~/.config/features && grep -q "github" ~/.config/features)
 then
