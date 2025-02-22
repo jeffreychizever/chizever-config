@@ -57,5 +57,6 @@ test -e ~/.zshrc || touch ~/.zshrc
 grep -q "chizever-config" ~/.zshrc || echo "source ~/workspace/chizever-config/zshrc" >> ~/.zshrc
 test -e ~/.vimrc || touch ~/.vimrc
 ln -sf ~/workspace/chizever-config/nvim ~/.config
+~/.tmux/plugins/tpm/scripts/install_plugins.sh
 
 echo -e "Setup successful! Ride fast and take chances \xF0\x9F\x8F\x8E"
