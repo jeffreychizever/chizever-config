@@ -4,6 +4,7 @@ export HISTFILESIZE=1048576
 
 source ~/.gruvbox.zsh
 source ~/workspace/chizever-config/p10k.zsh
+source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 eval "$(~/.local/bin/mise activate bash)"
 
@@ -97,3 +98,21 @@ then
     alias docs="web https://docs.google.com/"
     alias notes="web https://keep.google.com/#NOTE/12tsHEzsQPpI6o8e2FhjWWlcoi4bRq1hI_d-Vwg0cw6GZXOCK3sW1h76kwvgkW_90Kn4U"
 fi
+
+
+# https://ianyepan.github.io/posts/moving-away-from-ohmyzsh/
+HISTFILE=~/.zsh_history
+HISTDUP=erase
+setopt appendhistory
+setopt sharehistory
+setopt incappendhistory
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+
+autoload -U compinit && compinit
+zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
+
+
+source ~/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

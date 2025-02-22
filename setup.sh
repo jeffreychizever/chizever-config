@@ -9,8 +9,9 @@ sudo apt-get install -y tmux neovim gh silversearcher-ag universal-ctags tree gc
 sudo chsh -s "$(which zsh)" "$(whoami)"
 ln -sf "$(which fdfind)" ~/.local/bin/fd
 
+# TODO put these in a dot dir
+test -d ~/zsh-syntax-highlighting  || git clone --depth=1 https://github.com/zsh-users/zsh-syntax-highlighting.git ~/zsh-syntax-highlighting
 test -d ~/powerlevel10k  || git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ~/powerlevel10k
-grep powerlevel10k ~/.zshrc || echo 'source ~/powerlevel10k/powerlevel10k.zsh-theme' >>~/.zshrc
 
 test -d ~/.tmux/plugins/tpm || git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
