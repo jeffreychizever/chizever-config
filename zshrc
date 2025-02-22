@@ -2,9 +2,8 @@
 export HISTSIZE=1048576
 export HISTFILESIZE=1048576
 
-# square brackets around escape codes tell bash they're non-printable, so it knows they don't take up space
-# otherwise when you scroll through history, the first few characters of the command will not redraw
-export PS1='\[\e[34m\]$? $(ts) $(gb) $(dirs): \[\e[0m\]'
+source ~/.gruvbox.zsh
+source ~/workspace/chizever-config/p10k.zsh
 
 eval "$(~/.local/bin/mise activate bash)"
 
@@ -13,6 +12,8 @@ export PATH="/opt/nvim-linux-x86_64/bin:$PATH"
 export JAVA_HOME=$(cat ~/.java_home)
 export PATH="$JAVA_HOME/bin:$PATH"
 alias v=nvim
+alias ls="ls --color=auto"
+alias grep="grep --color"
 alias notes="v ~/notes"
 alias todo="(cd ~ && ag TODO)"
 alias ct="ctags -R --exclude=.git --exclude=log --exclude=html --exclude=build *"
@@ -49,7 +50,7 @@ alias cdah="cd ~/adhoc"
 # config interactions
 alias cdc="cd ~/workspace/chizever-config"
 rcr() {
-  . ~/.bashrc
+  . ~/.zshrc
   tmux source-file ~/.tmux.conf
 }
 
