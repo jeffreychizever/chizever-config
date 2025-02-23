@@ -18,5 +18,8 @@ keymap TAB: window prefix
 keymap \: leader
 keymap |: local leader
 keymap K: hover(), shows method signature
+keymap gc: comment out block (language-aware)
+keymap gq: format block (language aware)
+keymap *: search for token under cursor in current file
 ```
 

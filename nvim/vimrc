@@ -18,6 +18,8 @@ set expandtab
 set shiftwidth=4
 set ts=4 sw=4
 nnoremap <tab> <c-w>
+command! W write
+command! Q quit
 
 set background=dark
 colorscheme gruvbox

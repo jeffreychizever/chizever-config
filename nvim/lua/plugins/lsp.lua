@@ -64,6 +64,9 @@ return {
         vim.keymap.set('n', '<leader>vd', builtin.lsp_definitions, { desc = 'View definition(s)' })
         vim.keymap.set('n', '<leader>vt', builtin.lsp_type_definitions, { desc = 'View type definition(s)' })
         vim.keymap.set('n', '<leader>vu', builtin.lsp_incoming_calls, { desc = 'View usage(s)' })
+        vim.keymap.set('n', '<leader>vr', builtin.lsp_references, { desc = 'View reference(s)' })
+        vim.keymap.set('n', '<leader>vs', builtin.lsp_workspace_symbols, { desc = 'View symbols' })
+        vim.keymap.set('n', '<leader>va', vim.lsp.buf.code_action, { desc = 'View action(s)' })
         vim.keymap.set('n', '<leader>ve', builtin.diagnostics, { desc = 'View error(s)' })
 
         vim.api.nvim_create_autocmd({ "BufReadPost", "InsertLeave", "BufWritePost" }, {

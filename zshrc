@@ -13,8 +13,10 @@ export PATH="/opt/nvim-linux-x86_64/bin:$PATH"
 export JAVA_HOME=$(cat ~/.java_home)
 export PATH="$JAVA_HOME/bin:$PATH"
 alias v=nvim
-alias ls="ls --color=auto"
-alias grep="grep --color"
+alias vc="v ~/workspace/chizever-config/zshrc"
+alias ls="ls --color=always"
+alias grep="grep --color=always"
+export LESS="-R"
 alias notes="v ~/notes"
 alias todo="(cd ~ && ag TODO)"
 alias ct="ctags -R --exclude=.git --exclude=log --exclude=html --exclude=build *"
