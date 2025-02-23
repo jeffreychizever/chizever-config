@@ -8,15 +8,20 @@ source ~/powerlevel10k/powerlevel10k.zsh-theme
 
 eval "$(~/.local/bin/mise activate bash)"
 
+
+# purdy
+alias ls="ls --color=always"
+alias grep="grep --color=always"
+alias jq="jq -C"
+alias tree="tree -C"
+export LESS="-r"
+
 # various
 export PATH="/opt/nvim-linux-x86_64/bin:$PATH"
 export JAVA_HOME=$(cat ~/.java_home)
 export PATH="$JAVA_HOME/bin:$PATH"
 alias v=nvim
 alias vc="v ~/workspace/chizever-config/zshrc"
-alias ls="ls --color=always"
-alias grep="grep --color=always"
-export LESS="-R"
 alias notes="v ~/notes"
 alias todo="(cd ~ && ag TODO)"
 alias ct="ctags -R --exclude=.git --exclude=log --exclude=html --exclude=build *"

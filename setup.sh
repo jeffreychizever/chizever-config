@@ -48,7 +48,9 @@ then
     gh auth status || (gh auth login && gh auth status)
 fi
 
+git config --global color.ui true
 git config --global core.excludesfile ~/.gitignore
+git config --global core.pager 'less -r'
 touch ~/.gitignore
 grep "tags" ~/.gitignore || echo "tags" >> ~/.gitignore
 
