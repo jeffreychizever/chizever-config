@@ -22,6 +22,7 @@ export JAVA_HOME=$(cat ~/.java_home)
 export PATH="$JAVA_HOME/bin:$PATH"
 alias v=nvim
 alias vc="v ~/workspace/chizever-config/zshrc"
+alias dud="du -h --max-depth=1 2>/dev/null"
 alias notes="v ~/notes"
 alias todo="(cd ~ && ag TODO)"
 alias ct="ctags -R --exclude=.git --exclude=log --exclude=html --exclude=build *"
