@@ -19,6 +19,8 @@ test -e ~/.gruvbox.zsh || curl -L https://raw.githubusercontent.com/hgaiser/gruv
 
 tree-sitter -V || sudo npm install -g tree-sitter-cli
 
+gemini -v || sudo npm install -g @google/gemini-cli
+
 java -XshowSettings:properties -version 2>&1 > /dev/null | grep 'java.home' | awk '{print $NF}' > ~/.java_home
 
 # make directories
